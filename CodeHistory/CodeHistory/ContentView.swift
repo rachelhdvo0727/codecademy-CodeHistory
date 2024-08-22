@@ -37,7 +37,7 @@ struct ContentView: View {
                         AnswerIndex in
                         
                         Button(action: {
-                            print("You've tapped on option with the text: \(question.possibleAnswers[AnswerIndex]))")
+                            print("You've tapped on option with the text: \(question.possibleAnswers[AnswerIndex])")
                         }, label: {
                             ChoiceTextView(choiceText: question.possibleAnswers[AnswerIndex])
                         })
