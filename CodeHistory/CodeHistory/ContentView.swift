@@ -33,29 +33,15 @@ struct ContentView: View {
                 
                 // Answer buttons
                 HStack {
-                    Button(action: {
-                        print("You've tapped Ant")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[0])
-                    })
-                    
-                    Button(action: {
-                        print("You've tapped Beetle")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[1])
-                    })
-                    
-                    Button(action: {
-                        print("You've tapped Moth")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[2])
-                    })
-                    
-                    Button(action: {
-                        print("You've tapped Fly")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[3])
-                    })
+                    ForEach(0..<question.possibleAnswers.count) {
+                        AnswerIndex in
+                        
+                        Button(action: {
+                            print("You've tapped on option with the text: \(question.possibleAnswers[AnswerIndex]))")
+                        }, label: {
+                            ChoiceTextView(choiceText: question.possibleAnswers[AnswerIndex])
+                        })
+                    }
                 }
             }
         }
